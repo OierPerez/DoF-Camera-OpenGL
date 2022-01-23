@@ -1,0 +1,21 @@
+#version 400
+
+in vec2 uv;
+out vec4 outputColor;
+
+
+uniform sampler2D textureData;
+
+
+void main()
+{
+
+  outputColor.w = 1.f;
+
+  outputColor.xy = uv;
+  outputColor.z = 0.f;
+  
+  outputColor.xyz = texture(textureData, uv).rgb;		//Get the texture with the UV coordinates
+   //outputColor = vec4(1.f,1.f,1.f,1.f);
+ 
+}
